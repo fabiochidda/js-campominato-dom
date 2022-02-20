@@ -27,3 +27,7 @@
 .ms_hard {
     width: calc(100% / 7);
 }
+
+.ms_selected_cell {
+    background-color: lightblue;
+}

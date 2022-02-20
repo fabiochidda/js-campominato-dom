@@ -55,9 +55,18 @@ const startGameFunction  = () => {
             gameCellSquare.classList.add("ms_hard")
             
         }
-        
-    }
 
+        function gameCellClick() {
+
+            gameCellSquare.classList.add("ms_selected_cell")
+        
+        } 
+        
+        gameCellSquare.addEventListener("click", gameCellClick)
+
+    }
+    
 }
 
 startGameButton.addEventListener("click", startGameFunction)
+
