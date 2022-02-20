@@ -65,8 +65,38 @@ const startGameFunction  = () => {
         gameCellSquare.addEventListener("click", gameCellClick)
 
     }
+
+    const bombsGenerated = bombGenerator(16,1,gameCells)
+
+    function bombGenerator(bombNumber, min, max) {
+
+        const bombCounter = [];
+    
+        while (bombCounter.length < bombNumber) {
+    
+            const generatedNumber = randomNumber(min,max);
+    
+            if (bombCounter.includes(generatedNumber) === false ) {
+    
+                bombCounter.push(generatedNumber)
+    
+            }
+    
+        }
+    
+        return bombCounter
+
+    }
+
+    console.log(bombsGenerated)
     
 }
 
 startGameButton.addEventListener("click", startGameFunction)
+
+function randomNumber(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1) + min); 
+}
 
