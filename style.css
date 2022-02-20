@@ -1,0 +1,29 @@
+.ms_game_container {
+    width: 500px;
+    background-color: grey;
+}
+
+.ms_container_bg {
+    background-color: #7FFFD4;
+    height: 870px;
+}
+
+.ms_gameCell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    aspect-ratio: 1;
+    border: 1px solid black;
+}
+
+.ms_easy {
+    width: calc(100% / 10);
+}
+
+.ms_medium {
+    width: calc(100% / 9);
+}
+
+.ms_hard {
+    width: calc(100% / 7);
+}
