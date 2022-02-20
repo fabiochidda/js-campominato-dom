@@ -35,6 +35,30 @@ const startGameFunction  = () => {
 
     console.log(gameCells)
 
+    const bombsGenerated = bombGenerator(16,1,gameCells)
+
+    function bombGenerator(bombNumber, min, max) {
+
+        const bombCounter = [];
+    
+        while (bombCounter.length < bombNumber) {
+    
+            const generatedNumber = randomNumber(min,max);
+    
+            if (bombCounter.includes(generatedNumber) === false ) {
+    
+                bombCounter.push(generatedNumber)
+    
+            }
+    
+        }
+    
+        return bombCounter
+
+    }
+
+    console.log(bombsGenerated)
+
     for (let i=0; i < gameCells; i++) {
 
         const gameCellSquare = document.createElement("div")
@@ -59,6 +83,12 @@ const startGameFunction  = () => {
         function gameCellClick() {
 
             gameCellSquare.classList.add("ms_selected_cell")
+
+            if (bombsGenerated.includes(parseInt(gameCellSquare.innerHTML))) {
+
+                gameCellSquare.classList.add("ms_bomb")
+    
+            }
         
         } 
         
@@ -66,30 +96,6 @@ const startGameFunction  = () => {
 
     }
 
-    const bombsGenerated = bombGenerator(16,1,gameCells)
-
-    function bombGenerator(bombNumber, min, max) {
-
-        const bombCounter = [];
-    
-        while (bombCounter.length < bombNumber) {
-    
-            const generatedNumber = randomNumber(min,max);
-    
-            if (bombCounter.includes(generatedNumber) === false ) {
-    
-                bombCounter.push(generatedNumber)
-    
-            }
-    
-        }
-    
-        return bombCounter
-
-    }
-
-    console.log(bombsGenerated)
-    
 }
 
 startGameButton.addEventListener("click", startGameFunction)

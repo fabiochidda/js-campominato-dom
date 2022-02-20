@@ -31,3 +31,7 @@
 .ms_selected_cell {
     background-color: lightblue;
 }
+
+.ms_bomb {
+    background-color: red;
+}
