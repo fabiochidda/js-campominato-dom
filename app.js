@@ -1,6 +1,7 @@
 const startGameButton = document.getElementById("startGame");
 const difficultySelector = document.getElementById("gameMode");
 const gameContainer = document.querySelector(".ms_game_container");
+const gameResult = document.querySelector(".ms_game_result")
 
 
 
@@ -87,7 +88,14 @@ const startGameFunction  = () => {
             if (bombsGenerated.includes(parseInt(gameCellSquare.innerHTML))) {
 
                 gameCellSquare.classList.add("ms_bomb")
+                const gameOver = document.createElement("p")
+                gameOver.innerHTML="Hai Perso"
+                gameResult.append(gameOver)
     
+            } else {
+
+                gameCellSquare.classList.add("ms_safe")
+
             }
         
         } 
